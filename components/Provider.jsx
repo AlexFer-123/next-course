@@ -1,7 +1,12 @@
-import React from 'react'
+"use client";
 
-export const Provider = () => {
+import React from 'react'
+import { SessionProvider } from 'next-auth/react'
+
+export const Provider = ({children, session}) => {
   return (
-    <div>Provider</div>
+    <SessionProvider session={session}>
+        {children}
+    </SessionProvider>
   )
 }
